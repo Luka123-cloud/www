@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Love+Ya+Like+A+Sister&family=Lustria&family=Oldenburg&family=Paytone+One&family=Preahvihear&family=Protest+Strike&family=Righteous&family=Solitreo&family=ZCOOL+QingKe+HuangYou&display=swap');
+.lt-block:not(.lt-editing) #preloader {
+    display: flex;
+    position:fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: #1C1B19;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+#preloader {
+    transition: transform 0.5s ease;
+}
+
+.preloader-animation {
+    font-size: 2rem;
+    font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+    animation: fadeInOut 0.4s infinite;
+}
+
+@keyframes rotation {
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+#preloader.hide {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.title-part ampersand{
+  font-size: 1vw;
+}
+.head1{  
+    position: fixed;
+    margin: 0;
+    top:-0.3%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Protest Strike', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 9vw;/*или же League Spartan*/
+    font-weight: bold;
+    color: #1C1B19;
+    z-index: 3;
+}
+.head1.hide{
+    transform: translateY(-100%);
+}
+.main{
+    background-color: #EDE7DB;
+}
+.inner-image-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+}
+
+.inner-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  z-index: 1;
+}
+.text-aa{
+    opacity: 0;
+    pointer-events: none;
+}
+.one i{
+    color: #1C1B19;
+    pointer-events: none;
+    justify-content: center;
+    text-align: center;
+    z-index: 3;
+
+}
+.ima {
+  position: relative;
+  height: 100%;
+  height: auto;
+  justify-content: center;
+  text-align: center;
+  align-items: center; /* фиксированная высота для контейнера */
+}
+/* Первая картинка — фон, НЕ масштабируется */
+.background-image-container {
+  position: fixed;
+  top: 0vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin-top: 0%;
+  z-index: 0;
+  overflow: hidden;
+}
+.background-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Вторая картинка — масштабируется */
+.scale-image-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.scale-image {
+  max-width: 100vw;
+  height: auto;
+  transform-origin: center;
+  transition: transform 0.4s ease-out;
+  display: block;
+}
+
+/* Контент поверх */
+.scroll-wrapper {
+  position: relative;
+  z-index: 2;
+  height:300vh;
+}
+
+
+.text-kine {
+  position: fixed;
+  z-index: 10;
+  font-size: 1.7rem;
+  top: 22vh;
+  text-align: center;
+  padding: 0; 
+  margin-top: 0;font-weight: lighter;
+  color: #1C1B19;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.8s ease;
+  font-family: 'Lustria', serif;
+  pointer-events: none;
+}
+.text-h2 {
+  position: fixed;
+  z-index: 10;
+  font-size: 1.7rem;
+  top: 90vh;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  font-weight: lighter;
+  text-align: center;
+  color: #1C1B19;
+  
+  pointer-events: none;
+  font-family: 'Lustria', serif;
+}
+.lovely {
+  position: absolute; /* или absolute, если хочешь привязать к картинке */
+  z-index: 16;
+  top:140vh; /* Должен быть выше чем z-index: 1 у .scale-image-container */
+  font-size: 1.4rem;
+  color: #1C1B19;
+  transform: translateX(-50%);
+  left: 27%;
+  font-weight: 100; /*не работает с этим шрифтом*/
+  text-align: center; 
+  font-family: 'Love Ya Like A Sister', cursive;
+   /* необязательно */
+}
+
+
+.header-section{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.header-section.scrolled{
+  position: absolute;
+}
+
+.scroll-space {
+  height: 30vh; /* или больше, чтобы точно хватило места */
+}
+
+.proxe{
+  position: absolute;
+  color: #1C1B19;
+  font-family: 'League Spartan', serif;
+  z-index: 16;
+  transform: translateX(-50%);
+  left: 35%;
+  font-size: 19px;
+  top: 167vh;
+}
+.cmh{
+  position: absolute;
+  color: #1C1B19;
+  font-family: 'Lustria';
+  transform: translateX(-50%);
+  left: 31%;
+  top: 213vh;
+  font-size: medium;
+  font-weight: 200;
+  text-align: center;
+  z-index: 16;
+}
+.cafe {
+  font-family: 'League Spartan';
+  font-weight: bolder;
+  color: #1C1B19; /* Начальное состояние — сжатый */
+  transform-origin: bottom; /* Растягивается снизу */
+  top: 225vh;
+  width: 100%;
+  height: auto;
+  z-index: 16;
+  justify-content: center;
+  font-size: 6rem;
+  text-align: center;
+  position: absolute;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); /* Плавное ускорение */
+}
+
+.cafe.animate {
+  transform: translateX(-50%) scaleY(1); /* Полная высота */
+}
+@keyframes growText {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+.grow {
+  display: inline-block;
+  transform-origin: bottom;
+  animation: growText 1.5s ease-out forwards;
+}
+.cafe-abs-wrapper {
+  position: absolute;
+  top: 255vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 16;
+}
+
+.cafe-abs-row {
+  display: flex;
+  gap: 630px; /* ← вот тут контролируешь расстояние между f2 и f3 */
+}
+
+.left-group
+{
+  display: flex;
+  gap: 10em;
+}
+.right-group {
+  display: flex;
+  gap: 1em;
+}
+
+.f1, .f2, .f3, .f4{
+  position: static; /* иначе они выйдут из потока flex */
+  color: #1C1B19;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 25px;
+}
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.imagebuild {
+  z-index: 16;
+  top: 266vh;
+  position: absolute;
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  
+}
+.imagebuild img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.imagebuild.visible img{
+  opacity: 1;
+}
+.imagew{
+  background-color: #484745;
+}
+.history {
+  position: absolute;
+  z-index: 16;
+  top: 346vh;
+  color: #1C1B19;
+  font-family: 'Oldenburg', cursive;
+  font-weight: lighter;
+  font-size: 19px;
+  width:35%;
+  justify-content: center;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.history_sequel{
+  position: absolute;
+  z-index: 16;
+  top: 366vh;
+  font-family: 'League Spartan', cursive;
+  font-size: 19px;
+  font-weight: 400;
+  color: #1C1B19;
+  line-height: 1.8;
+  width: 35%;
+  justify-content: center;
+  transform: translateX(-50%);
+  left: 50%;
+}
+.masters{
+  position: absolute;
+  z-index: 16;
+  top: 410vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.masters img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+}
+
+.mast {
+  transition: opacity 1s ease, transform 1s ease;
+   transition-delay: var(--delay, 0s)
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inter {
+  position: absolute;
+  z-index: 16;
+  top: 465vh;
+  font-family: 'League Spartan', cursive ;
+  color: #1C1B19;
+  font-size: 110px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.inter.animate {
+  display: inline-block;
+  transform-origin: bottom;
+  animation: growText 1.5s ease-out forwards;
+}
+.last{
+  position: absolute;
+  z-index: 16;
+  top: 503vh;
+  color: #1C1B19;
+  font-family: 'Lustria';
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: center;
+  left: 4%;
+}
+
+.level {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 столбца */
+  gap: 20px;
+  z-index: 16;
+  text-align: center;
+  color: #1C1B19;
+  font-weight: 600;
+  font-size: 21px;
+  font-family: 'Lustria';
+  height: 100vh; /* или auto, в зависимости от нужного размера */
+}
+.lev1 {
+  transform: translateY(114vh);
+}
+
+.lev2 {
+  transform: translateY(110vh);
+}
+
+.lev3 {
+  transform: translateY(95vh);
+}
+
+.lev4 {
+  transform: translateY(82vh);
+}
+
+.pets {
+  z-index: 16;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'League Spartan' ;
+  color: #56544f;
+  height: 100vh;
+}
+
+.pet1 {
+  transform: translateY(18.5vh);
+}
+
+.pet2 {
+  transform: translateY(14.5vh);
+}
+
+.pet3 {
+  transform: translateY(-0.2vh);
+}
+
+.pet4 {
+  transform: translateY(-13.5vh);
+}
+
+.ass{
+  position: fixed;
+  z-index: 1000;
+  color: #1C1B19;
+  font-size: 16px;
+  top: 0;
+  display: flex;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  height: 60px;
+  transition: all 1s ease;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.ass.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.as{
+  font-family: 'League Spartan';
+  z-index: 1000;
+  font-weight: 450;
+  font-size: 18px;
+  margin-left: 30px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  
+}
+
+nav a {
+  text-decoration: none;
+  color: #1C1B19;
+}
+
+.ll {
+  z-index: 1000;
+  font-family: 'Protest Strike', 'Lucida Sans Regular';
+}
+.right-links {
+  display: flex;
+}
+
+.word-container {
+  position: relative;
+  height: 15px;
+  width: auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+        
+.word {
+  margin-top: -0.2%;
+  position: relative;
+  transition: all 0.5s ease;
+}
+        
+.word.original {
+  top: 0;
+  opacity: 1;
+}
+        
+.word.clone {
+  bottom: -40px;
+  opacity: 0;
+}
+        
+.word-container:hover .word.original {
+  top: -50px;
+  opacity: 0;
+}
+        
+.word-container:hover .word.clone {
+  bottom: 35px;
+  opacity: 1;
+}
+
+.sa{
+  margin-top: -0.9%;
+  border-color: #1C1B19;
+  box-shadow: #1C1B19;
+  padding: 3px;
+  border-radius: 15%;
+  border: 1.5px solid;
+}
